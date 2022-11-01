@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Clases\Persona.Methods.cs" />
+    <Compile Remove="Clases\Persona.Properties.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Clases\Persona.Methods.cs" />
+    <None Include="Clases\Persona.Properties.cs" />
+  </ItemGroup>
+
+</Project>
