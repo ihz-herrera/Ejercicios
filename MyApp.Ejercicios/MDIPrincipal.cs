@@ -18,9 +18,18 @@ namespace MyApp.Ejercicios
 
         private void btnToDo_Click(object sender, EventArgs e)
         {
-            var frmTodoList = new Todolist();
+            try
+            {
+                var frmTodoList = new Todolist();
 
-            frmTodoList.ShowDialog();
+                frmTodoList.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error.", "Informativo");
+                //Todo: Logger
+            }
+
         }
     }
 }

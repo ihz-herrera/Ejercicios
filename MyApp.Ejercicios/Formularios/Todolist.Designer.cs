@@ -36,6 +36,8 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dtgTareas = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTareas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,11 +92,14 @@
             // 
             // dtgTareas
             // 
+            this.dtgTareas.AllowUserToAddRows = false;
+            this.dtgTareas.AllowUserToDeleteRows = false;
+            this.dtgTareas.AllowUserToResizeRows = false;
             this.dtgTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgTareas.Location = new System.Drawing.Point(247, 36);
+            this.dtgTareas.Location = new System.Drawing.Point(247, 68);
             this.dtgTareas.Name = "dtgTareas";
             this.dtgTareas.RowTemplate.Height = 25;
-            this.dtgTareas.Size = new System.Drawing.Size(465, 168);
+            this.dtgTareas.Size = new System.Drawing.Size(465, 136);
             this.dtgTareas.TabIndex = 6;
             // 
             // button1
@@ -107,11 +112,30 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(247, 34);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(388, 23);
+            this.txtBuscar.TabIndex = 8;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(639, 34);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Todolist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 245);
+            this.ClientSize = new System.Drawing.Size(728, 219);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtgTareas);
             this.Controls.Add(this.btnAceptar);
@@ -139,5 +163,7 @@
         private Button btnAceptar;
         private DataGridView dtgTareas;
         private Button button1;
+        private TextBox txtBuscar;
+        private Button btnBuscar;
     }
 }
