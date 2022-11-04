@@ -36,8 +36,8 @@ namespace MyApp.Formulario
                 y = int.Parse(txtVar2.Text);
             }
 
-            Operaciones.Sumar(x, y);
-            var mensaje = Operaciones.GenerarMensaje(idioma);
+            //Operaciones.Sumar(x, y);
+            //var mensaje = Operaciones.GenerarMensaje(idioma);
 
             label1.Text = mensaje;
 

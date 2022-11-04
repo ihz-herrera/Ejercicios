@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIPrincipal));
             this.btnArrays = new System.Windows.Forms.Button();
             this.btnToDo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,11 +46,13 @@
             // 
             // btnToDo
             // 
-            this.btnToDo.Location = new System.Drawing.Point(49, 85);
+            this.btnToDo.Image = ((System.Drawing.Image)(resources.GetObject("btnToDo.Image")));
+            this.btnToDo.Location = new System.Drawing.Point(49, 153);
             this.btnToDo.Name = "btnToDo";
-            this.btnToDo.Size = new System.Drawing.Size(75, 23);
+            this.btnToDo.Size = new System.Drawing.Size(114, 107);
             this.btnToDo.TabIndex = 1;
             this.btnToDo.Text = "ToDo";
+            this.btnToDo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnToDo.UseVisualStyleBackColor = true;
             this.btnToDo.Click += new System.EventHandler(this.btnToDo_Click);
             // 

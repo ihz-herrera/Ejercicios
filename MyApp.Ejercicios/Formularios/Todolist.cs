@@ -1,4 +1,5 @@
 ﻿using MyApp.Ejercicios.Clases;
+using MyApp.Ejercicios.Contexto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace MyApp.Ejercicios.Formularios
     {
 
         public List<ToDo> ListaTareas;
-
+        
         public Todolist()
         {
             InitializeComponent();
@@ -60,6 +61,8 @@ namespace MyApp.Ejercicios.Formularios
         {
             try
             {
+                Context context = new();
+
                 var toDo = new ToDo();
                 ListaTareas = toDo.CargarTareas();
                 dtgTareas.DataSource = ListaTareas;
@@ -122,7 +125,55 @@ namespace MyApp.Ejercicios.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            var text = txtBuscar.Text;
 
+            if (string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                ToDo toDo = new ToDo();
+                ListaTareas = toDo.CargarTareas();
+
+                dtgTareas.DataSource = null;
+                dtgTareas.DataSource = ListaTareas;
+                dtgTareas.Refresh();
+            }
+            else
+            {
+                dtgTareas.DataSource = null;
+                var result = ListaTareas.Where<ToDo>(x => 
+                    {
+                        var result = x.Titulo.ToUpper().Contains(text.ToUpper());
+                        return result;
+                    });
+
+                dtgTareas.DataSource = result.ToList();
+                dtgTareas.Refresh();
+            }
+            
+            
+            
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var text = txtBuscar.Text;
+
+            if (string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                ToDo toDo = new ToDo();
+                ListaTareas = toDo.CargarTareas();
+
+                dtgTareas.DataSource = null;
+                dtgTareas.DataSource = ListaTareas;
+                dtgTareas.Refresh();
+            }
+            else
+            {
+                dtgTareas.DataSource = null;
+                var result = ListaTareas.Where(x => x.Titulo.ToUpper()
+                .Contains(text.ToUpper()));
+                dtgTareas.DataSource = result.ToList();
+                dtgTareas.Refresh();
+            }
         }
     }
 }
