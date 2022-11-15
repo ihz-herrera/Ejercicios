@@ -8,5 +8,9 @@ namespace MyApp.Formulario
 {
     public class Operaciones
     {
+        internal static object GenerarMensaje(object idioma)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

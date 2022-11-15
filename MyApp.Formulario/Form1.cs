@@ -14,6 +14,7 @@ namespace MyApp.Formulario
     {
 
         private Operaciones operaciones = new Operaciones();
+        private object idioma;
 
         public Form1()
         {
@@ -37,9 +38,9 @@ namespace MyApp.Formulario
             }
 
             //Operaciones.Sumar(x, y);
-            //var mensaje = Operaciones.GenerarMensaje(idioma);
+            var mensaje = Operaciones.GenerarMensaje(idioma);
 
-            label1.Text = mensaje;
+            //label1.Text = mensaje;
 
            
         }
@@ -48,7 +49,7 @@ namespace MyApp.Formulario
 
         private void Español_Click(object sender, EventArgs e)
         {
-            Operaciones.Idioma = Idioma.Español;
+           // Operaciones.Idioma = Idioma.Español;
         }
     }
 }

@@ -56,7 +56,6 @@ namespace MyApp.Formulario
             this.label1.Size = new System.Drawing.Size(21, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "x";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtVar1
             // 
@@ -213,7 +212,6 @@ namespace MyApp.Formulario
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Calculos Matematicos";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

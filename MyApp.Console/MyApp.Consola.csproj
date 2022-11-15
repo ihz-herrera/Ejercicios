@@ -6,13 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Clases\Persona.Methods.cs" />
-    <Compile Remove="Clases\Persona.Properties.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Clases\Persona.Methods.cs" />
-    <None Include="Clases\Persona.Properties.cs" />
+    <Compile Remove="Clases\**" />
+    <EmbeddedResource Remove="Clases\**" />
+    <None Remove="Clases\**" />
   </ItemGroup>
 
 </Project>
