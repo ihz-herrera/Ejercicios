@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.Repositorios
 {
-    public class ClienteRepository : IRepository<Cliente>
+    public class DoctorRepository : IRepository<Doctor>
     {
-        public void Agregar(Cliente entity)
+        public void Agregar(Doctor entity)
         {
             throw new NotImplementedException();
         }
 
-        public List<Cliente> Consultar()
+        public List<Doctor> Consultar()
         {
             throw new NotImplementedException();
         }
 
-        public Cliente ConsultarPorId(string id)
+        public Doctor ConsultarPorId(string id)
         {
             throw new NotImplementedException();
         }
 
-        public void Guardar(List<Cliente> entidades)
+        public void Guardar(List<Doctor> entidades)
         {
             throw new NotImplementedException();
         }

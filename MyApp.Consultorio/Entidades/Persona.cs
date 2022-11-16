@@ -12,10 +12,7 @@ namespace MyApp.Consultorio.Entidades
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        public virtual List<T> CargarDatos<T>()
-        {
-            throw new NotImplementedException();
-        } 
+       
 
     }
 }

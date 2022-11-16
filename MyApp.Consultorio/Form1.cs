@@ -10,32 +10,63 @@ namespace MyApp.Consultorio
         {
             InitializeComponent();
 
-
+            Ejemplo(3);
         }
 
 
-        public void Ejemplo()
+
+
+        public void Ejemplo(int option)
         {
+            IRepository<Cliente> repo;
+            switch (option)
+            {
+                case 0:
+                    repo = new ClienteSQLRepository();
+                    break;
+                case 1:
+                    repo = new ClienteTextFileRepository();
+                    break;
+                case 2:
+                    repo = new ClienteSqliteRepository();
+                    break;
+                default:
+                    repo = new ClienteMemoryRepository();
+                    break;
+            }
 
-            var doctor = new Doctor();
-            var doctor2 = new Doctor();
-            var doctor3 = new Doctor();
-
-            doctor.Nombre = "Alan";
-            doctor2.Nombre = "Martin";
-            doctor3.Nombre = "Abdiel";
-
-
-            doctor.CargarDatos();
-
-
-            var repo = new ClienteRepository();
             
             var cliente = new Cliente(repo);
 
-            cliente.CargarDatos();
 
-            var persona = new Persona();
+            cliente.AgregarCliente(new Cliente(repo)
+            {
+                Nombre = "Martin",
+                Apellido = "Ponce",
+                Id = Guid.NewGuid().ToString()
+            });
+
+            cliente.AgregarCliente(new Cliente(repo)
+            {
+                Nombre = "Alan",
+                Apellido = "Chavez",
+                Id = Guid.NewGuid().ToString()
+            });
+
+            cliente.AgregarCliente(new Cliente(repo)
+            {
+                Nombre = "Abdiel",
+                Apellido = "Sanchez",
+                Id = Guid.NewGuid().ToString()
+            });
+
+
+            cliente.CargarDatos().ForEach(x =>
+            {
+                MessageBox.Show(x.Nombre);
+            });
+
+
 
 
         }
