@@ -8,7 +8,7 @@ using MyApp.Consultorio.Contextos;
 
 #nullable disable
 
-namespace MyApp.Consultorio.Migrations
+namespace MyApp.Consultorio.Infraestrucura.SQLServer.Migrations
 {
     [DbContext(typeof(SQLContext))]
     partial class SQLContextModelSnapshot : ModelSnapshot

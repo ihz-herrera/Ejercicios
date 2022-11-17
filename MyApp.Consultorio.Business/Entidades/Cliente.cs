@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.Entidades
 {
-    public class Cliente : Persona
+    public class Cliente : Persona, IEntity
     {
         public readonly string Path="";
         public readonly IRepository<Cliente> repository;

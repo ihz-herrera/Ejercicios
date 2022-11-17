@@ -1,3 +1,4 @@
+using MyApp.Consultorio.Contextos;
 using MyApp.Consultorio.Entidades;
 using MyApp.Consultorio.Interfaces;
 using MyApp.Consultorio.Repositorios;
@@ -10,7 +11,7 @@ namespace MyApp.Consultorio
         {
             InitializeComponent();
 
-            Ejemplo(3);
+            Ejemplo(0);
         }
 
 
@@ -19,16 +20,18 @@ namespace MyApp.Consultorio
         public void Ejemplo(int option)
         {
             IRepository<Cliente> repo;
+            
+            
             switch (option)
             {
                 case 0:
-                    repo = new ClienteSQLRepository();
+                    repo = new ClienteSQLRepository( new SQLContext());
                     break;
                 case 1:
                     repo = new ClienteTextFileRepository();
                     break;
                 case 2:
-                    repo = new ClienteSqliteRepository();
+                    repo = new ClienteSqliteRepository(new SqliteContext());
                     break;
                 default:
                     repo = new ClienteMemoryRepository();
@@ -41,8 +44,8 @@ namespace MyApp.Consultorio
 
             cliente.AgregarCliente(new Cliente(repo)
             {
-                Nombre = "Martin",
-                Apellido = "Ponce",
+                Nombre = "Ivan",
+                Apellido = "Herrera",
                 Id = Guid.NewGuid().ToString()
             });
 

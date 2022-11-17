@@ -13,7 +13,7 @@ namespace MyApp.Consultorio.Repositorios
         /*** Persistencia en Memoria ***/
         private List<Cliente> Clientes = new List<Cliente>();
         /********************************/
-        
+
         public void Agregar(Cliente entity)
         {
             Clientes.Add(entity);

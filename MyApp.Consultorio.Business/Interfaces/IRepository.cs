@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T : class, IEntity, new()
     {
         void Guardar(List<T> entidades);
         void Agregar(T entity);

@@ -9,11 +9,11 @@ using MyApp.Consultorio.Contextos;
 
 #nullable disable
 
-namespace MyApp.Consultorio.Migrations
+namespace MyApp.Consultorio.Infraestrucura.SQLServer.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    [Migration("20221116174226_Initial")]
-    partial class Initial
+    [Migration("20221117175212_inicializar")]
+    partial class inicializar
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
