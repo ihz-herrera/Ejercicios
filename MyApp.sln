@@ -19,15 +19,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{0B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentacion", "Presentacion", "{74348201-B8CC-42D1-A062-954A6AF8694A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.Infraestrucura.SQLServer", "MyApp.Consultorio.Infraestrucura.SQLServer\MyApp.Consultorio.Infraestrucura.SQLServer.csproj", "{0D694C4F-5F8E-45E5-992F-CAC553D85532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Consultorio.Infraestrucura.SQLServer", "MyApp.Consultorio.Infraestrucura.SQLServer\MyApp.Consultorio.Infraestrucura.SQLServer.csproj", "{0D694C4F-5F8E-45E5-992F-CAC553D85532}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.Infraestrucura.SQLite", "MyApp.Consultorio.Infraestrucura.SQLite\MyApp.Consultorio.Infraestrucura.SQLite.csproj", "{92B0F8CD-B9C1-4A13-9AE1-48092A8FEDD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Consultorio.Infraestrucura.SQLite", "MyApp.Consultorio.Infraestrucura.SQLite\MyApp.Consultorio.Infraestrucura.SQLite.csproj", "{92B0F8CD-B9C1-4A13-9AE1-48092A8FEDD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.Infraestrucura.TextFile", "MyApp.Consultorio.Infraestrucura.TextFile\MyApp.Consultorio.Infraestrucura.TextFile.csproj", "{4FBF5A4C-F09E-4E9A-96DB-151938C708F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Consultorio.Infraestrucura.TextFile", "MyApp.Consultorio.Infraestrucura.TextFile\MyApp.Consultorio.Infraestrucura.TextFile.csproj", "{4FBF5A4C-F09E-4E9A-96DB-151938C708F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.Infraestrucura.InMemory", "MyApp.Consultorio.Infraestrucura.InMemory\MyApp.Consultorio.Infraestrucura.InMemory.csproj", "{381C7480-37EB-4F90-83F2-F903B5BF3CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Consultorio.Infraestrucura.InMemory", "MyApp.Consultorio.Infraestrucura.InMemory\MyApp.Consultorio.Infraestrucura.InMemory.csproj", "{381C7480-37EB-4F90-83F2-F903B5BF3CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.Business", "MyApp.Consultorio.Business\MyApp.Consultorio.Business.csproj", "{1F9D7F89-5724-4106-B6AF-36A855E09EEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Consultorio.Business", "MyApp.Consultorio.Business\MyApp.Consultorio.Business.csproj", "{1F9D7F89-5724-4106-B6AF-36A855E09EEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.API", "MyApp.Consultorio.API\MyApp.Consultorio.API.csproj", "{1A61EBDB-957C-43AD-8974-CA81FB127099}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{1F9D7F89-5724-4106-B6AF-36A855E09EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F9D7F89-5724-4106-B6AF-36A855E09EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F9D7F89-5724-4106-B6AF-36A855E09EEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A61EBDB-957C-43AD-8974-CA81FB127099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A61EBDB-957C-43AD-8974-CA81FB127099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A61EBDB-957C-43AD-8974-CA81FB127099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A61EBDB-957C-43AD-8974-CA81FB127099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

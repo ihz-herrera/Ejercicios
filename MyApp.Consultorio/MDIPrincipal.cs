@@ -1,21 +1,19 @@
 using MyApp.Consultorio.Contextos;
 using MyApp.Consultorio.Entidades;
+using MyApp.Consultorio.Formularios;
 using MyApp.Consultorio.Interfaces;
 using MyApp.Consultorio.Repositorios;
 
 namespace MyApp.Consultorio
 {
-    public partial class Form1 : Form
+    public partial class MDIPrincipal : Form
     {
-        public Form1()
+        public MDIPrincipal()
         {
             InitializeComponent();
 
             Ejemplo(0);
         }
-
-
-
 
         public void Ejemplo(int option)
         {
@@ -72,6 +70,24 @@ namespace MyApp.Consultorio
 
 
 
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            var frmclientes = new frmClientes();
+            frmclientes.ShowDialog();
+        }
+
+        private void btnDoctores_Click(object sender, EventArgs e)
+        {
+            var frmdoctores = new frmDoctores();
+            frmdoctores.ShowDialog();
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            var frmcitas = new frmCitas();
+            frmcitas.ShowDialog();
         }
     }
 }

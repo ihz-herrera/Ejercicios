@@ -38,11 +38,18 @@ namespace MyApp.Consultorio.Entidades
         public void AgregarCliente(Cliente cliente)
         {
 
+            
+
             //Todo: Validar datos de entrada
             if (String.IsNullOrEmpty(cliente.Nombre) || String.IsNullOrEmpty(cliente.Apellido) )
             {
                 throw new ArgumentException("Las propiedades deben tener un valor. " +
                     "La propiedadad Nombre, Apellidos o Direccion estan vacias");
+            }
+
+            if( DateTime.Today.Year - cliente.FechaNacimiento.Year < 18)
+            {
+                throw new ArgumentException("El cliente debe tener mas de 18 años");
             }
 
             //Buscar si existe el cliente en la base de datos
