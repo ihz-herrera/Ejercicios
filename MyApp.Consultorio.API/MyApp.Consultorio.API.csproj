@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyApp.Consultorio.Business\MyApp.Consultorio.Business.csproj" />
+    <ProjectReference Include="..\MyApp.Consultorio.Infraestrucura.SQLServer\MyApp.Consultorio.Infraestrucura.SQLServer.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

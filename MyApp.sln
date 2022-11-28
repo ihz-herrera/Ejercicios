@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Consultorio.Business"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.API", "MyApp.Consultorio.API\MyApp.Consultorio.API.csproj", "{1A61EBDB-957C-43AD-8974-CA81FB127099}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Consultorio.Consola", "MyApp.Consultorio.Consola\MyApp.Consultorio.Consola.csproj", "{6003ED1B-0543-43BE-BF0F-AE31E2821DAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{1A61EBDB-957C-43AD-8974-CA81FB127099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A61EBDB-957C-43AD-8974-CA81FB127099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A61EBDB-957C-43AD-8974-CA81FB127099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6003ED1B-0543-43BE-BF0F-AE31E2821DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6003ED1B-0543-43BE-BF0F-AE31E2821DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6003ED1B-0543-43BE-BF0F-AE31E2821DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6003ED1B-0543-43BE-BF0F-AE31E2821DAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +97,7 @@ Global
 		{4FBF5A4C-F09E-4E9A-96DB-151938C708F4} = {3A04D492-ED5E-4B5F-8A4A-A9DBC279B28E}
 		{381C7480-37EB-4F90-83F2-F903B5BF3CCB} = {3A04D492-ED5E-4B5F-8A4A-A9DBC279B28E}
 		{1F9D7F89-5724-4106-B6AF-36A855E09EEE} = {0BF9BEC6-9F9C-48EF-9C81-619E8329680D}
+		{6003ED1B-0543-43BE-BF0F-AE31E2821DAE} = {74348201-B8CC-42D1-A062-954A6AF8694A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42B9F545-82E1-460C-9E95-3F9EAAF2DF01}

@@ -14,11 +14,15 @@ namespace MyApp.Consultorio.Contextos
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Doctor> Doctores { get; set; }
 
-
-        protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        public SQLContext(DbContextOptions opt):base(opt)
         {
-            builder.UseSqlServer("Server = LAP-IVANH\\MSSQLSERVER01;  Database = Consultorio; Trusted_Connection = true");
+
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        //{
+        //    builder.UseSqlServer("Server = LAP-IVANH\\MSSQLSERVER01;  Database = Consultorio; Trusted_Connection = true");
+        //}
 
     }
 }
