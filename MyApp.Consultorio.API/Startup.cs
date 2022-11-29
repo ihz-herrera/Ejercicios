@@ -31,13 +31,15 @@ namespace MyApp.Consultorio.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //! Lineas personalizadas
             services.ConfigureCors();
             services.ConfigureIISIntegration();
 
             string SqlConnection = Configuration.GetConnectionString("SqlConnectionStr") ;
 
             services.ConfigureSQLDbContext(SqlConnection);
-
+            //! Lineas personalizadas
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -61,7 +63,8 @@ namespace MyApp.Consultorio.API
 
             app.UseRouting();
             
-            app.UseCors("CorsPolicy");
+            //! Lineas personalizada
+            app.UseCors("CorsPolicy"); // Configuracion de Cors
 
             app.UseAuthorization();
 
