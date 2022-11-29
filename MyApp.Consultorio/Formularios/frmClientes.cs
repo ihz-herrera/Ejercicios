@@ -16,5 +16,6 @@ namespace MyApp.Consultorio.Formularios
         {
             InitializeComponent();
         }
+
     }
 }

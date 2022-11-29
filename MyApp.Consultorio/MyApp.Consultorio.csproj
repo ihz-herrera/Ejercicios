@@ -17,10 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyApp.Consultorio.Business\MyApp.Consultorio.Business.csproj" />
-    <ProjectReference Include="..\MyApp.Consultorio.Infraestrucura.InMemory\MyApp.Consultorio.Infraestrucura.InMemory.csproj" />
-    <ProjectReference Include="..\MyApp.Consultorio.Infraestrucura.SQLite\MyApp.Consultorio.Infraestrucura.SQLite.csproj" />
-    <ProjectReference Include="..\MyApp.Consultorio.Infraestrucura.SQLServer\MyApp.Consultorio.Infraestrucura.SQLServer.csproj" />
-    <ProjectReference Include="..\MyApp.Consultorio.Infraestrucura.TextFile\MyApp.Consultorio.Infraestrucura.TextFile.csproj" />
   </ItemGroup>
 
 </Project>
