@@ -33,7 +33,7 @@ namespace MyApp.Consultorio.API.Controllers
         [HttpGet("{id}")]
         public ActionResult ConsultarClientes([FromRoute] string id)
         {
-            Cliente cliente = _context.Clientes.Where(x => x.Id == id).FirstOrDefault();
+            Cliente cliente = _context.Clientes.Where(x => ((Interfaces.IEntity)x).Id == id).FirstOrDefault();
             try
             {
                 //return cliente;
@@ -41,9 +41,6 @@ namespace MyApp.Consultorio.API.Controllers
                 {
                     return NotFound("Cliente no encontrado");
                 }
-
-                
-
                 return Ok(cliente);
             }
             catch

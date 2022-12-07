@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.Entidades
 {
-    public class Cliente : Persona, IEntity
+    public class Cliente : Persona
     {
         public readonly string Path="";
         public readonly IRepository<Cliente> repository;
@@ -24,21 +24,20 @@ namespace MyApp.Consultorio.Entidades
 
         public Cliente()
         {
-
+            //! Crear un ID
+            Id ??= Guid.NewGuid().ToString();
         }
 
 
         public override string ToString()
         {
-            return $"{Id}, {Nombre}, {Apellido},{FechaNacimiento},{Direccion}";
+            return $"{((IEntity)this).Id}, {Nombre}, {Apellido},{FechaNacimiento},{Direccion}";
         }
 
 
 
         public void AgregarCliente(Cliente cliente)
         {
-
-            
 
             //Todo: Validar datos de entrada
             if (String.IsNullOrEmpty(cliente.Nombre) || String.IsNullOrEmpty(cliente.Apellido) )
@@ -62,11 +61,7 @@ namespace MyApp.Consultorio.Entidades
             {
                 throw new ArgumentException("El cliente ya existe");
             }
-
-
             repository.Agregar(cliente);
-
-
         }
        
 

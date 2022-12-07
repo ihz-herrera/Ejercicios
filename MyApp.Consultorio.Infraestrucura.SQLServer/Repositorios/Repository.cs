@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyApp.Consultorio.Entidades;
 using MyApp.Consultorio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace MyApp.Consultorio.Repositorios
 
         public T ConsultarPorId(string id)
         {
-            return _context.Set<T>().Where(x=> x.Id == id).ToList().FirstOrDefault();
+            return _context.Set<T>().Where(x=>x.Id == id).ToList().FirstOrDefault();
         }
 
         public void Guardar(List<T> entidades)

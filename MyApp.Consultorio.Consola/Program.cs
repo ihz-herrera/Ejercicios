@@ -1,18 +1,45 @@
 ﻿using MyApp.Consultorio.Consola;
+using MyApp.Consultorio.Consola.Enums;
+using MyApp.Consultorio.Consola.Enums.Shared;
+using System.ComponentModel;
 using System.Linq.Expressions;
 
 internal class Program
 {
+
+    
+
+
     private static T Funcion<T>(Action<T> expression) where T : new()
     {
         T c = new T();
 
         expression.Invoke(c);
         return c;
+
+        EnumTest(OptionType.option);
+;    }
+
+    public static void EnumTest(OptionType card)
+    {
+
+        Console.WriteLine(card.DisplayName());
+        switch (card)
+        {
+            case  OptionType.option:
+                
+                break;
+            case OptionType.option2:
+                break;
+            default: throw new ArgumentException();
+        }
     }
 
     private static void Main(string[] args)
     {
+        EnumTest(OptionType.option);
+
+
         Console.WriteLine("Hello, World!");
         var result = Funcion<Persona>(opt =>
         {
@@ -56,5 +83,10 @@ internal class Program
         }
     }
 
-
+    public enum OptionType
+    {
+        [Description("A webo")]
+        option,
+        option2
+    }
 }

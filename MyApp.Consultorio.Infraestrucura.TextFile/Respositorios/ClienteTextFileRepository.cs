@@ -42,7 +42,7 @@ namespace MyApp.Consultorio.Repositorios
 
                     Cliente cliente = new Cliente ()
                     {
-                        Id = campos[0],
+                        //Id = campos[0],
                         Nombre = campos[1],
                         Apellido = campos[2],
                         FechaNacimiento =  DateTime.Parse(campos[3]),
@@ -57,7 +57,7 @@ namespace MyApp.Consultorio.Repositorios
 
         public Cliente ConsultarPorId(string id)
         {
-            return Consultar().Where(x => x.Id.Equals(id)).FirstOrDefault();
+            return Consultar().Where(x => ((IEntity)x).Id.Equals(id)).FirstOrDefault();
         }
 
         public void Guardar(List<Cliente> entidades)

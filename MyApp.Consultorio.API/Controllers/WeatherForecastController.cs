@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using MyApp.Consultorio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.API.Controllers
 {
@@ -18,7 +19,7 @@ namespace MyApp.Consultorio.API.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,IOptions<Cliente> options )
         {
             _logger = logger;
         }
@@ -41,20 +42,36 @@ namespace MyApp.Consultorio.API.Controllers
         public ActionResult CrearEvento()
         {
 
-            return Ok("El evento se guardo correctamente");
+            try
+            {
+                return Ok("El evento se guardo correctamente");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message,ex);
+                return StatusCode(500, "Error Interno del Servidor");
+            }
         }
 
         [HttpPut]
         public ActionResult ActualizarEvento()
         {
 
-            return Ok("El evento se actualizo correctamente");
+            try
+            {
+                return Ok("El evento se actualizó correctamente");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message, ex);
+                return StatusCode(500, "Error Interno del Servidor");
+            }
         }
         [HttpDelete]
         public ActionResult EliminarEvento()
         {
 
-            return Ok("El evento se elimino correctamente");
+            return Ok("El evento se eliminó correctamente");
         }
         //public string MensajeSalida()
         //{

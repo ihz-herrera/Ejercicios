@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MyApp.Consultorio.Infraestrucura.InMemory": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53355;http://localhost:53356"
+    }
+  }
+}

@@ -26,7 +26,7 @@ namespace MyApp.Consultorio.Repositorios
 
         public Cliente ConsultarPorId(string id)
         {
-            return Clientes.Where(x => x.Id.Equals(id)).FirstOrDefault();
+            return Clientes.Where(x => ((IEntity)x).Id.Equals(id)).FirstOrDefault();
         }
 
         public void Guardar(List<Cliente> entidades)

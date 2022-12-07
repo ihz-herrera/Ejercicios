@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MyApp.Consultorio.Transversal\MyApp.Consultorio.Transversal.csproj" />
-  </ItemGroup>
-
 </Project>

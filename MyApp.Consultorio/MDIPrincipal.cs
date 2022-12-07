@@ -12,11 +12,40 @@ namespace MyApp.Consultorio
 
             //Ejemplo(0);
 
-            ConsultorioService service = new();
+            //ConsultorioService service = new("");
 
-            var result = service.ConsultarClientes();
+            //var result = service.ConsultarClientes();
 
-            ImprimirValores(result);
+            //ImprimirValores(result);
+
+
+            try
+            {
+                Cliente cliente = new();
+
+                cliente.Nombre = "";
+
+                //if (cliente.Nombre == null)
+                //{
+                //    throw new ArgumentException("El nombre del Cliente es nulo");
+                //}
+
+
+                MessageBox.Show(cliente.Nombre);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public void tarea()
+        {
+            Cliente cliente = new();
+
+            cliente.Nombre = null;
 
         }
 
@@ -25,16 +54,16 @@ namespace MyApp.Consultorio
         //    IRepository<Cliente> repo;
 
 
-        //    switch (option)
-        //    {
-        //        case 0:
-        //            repo = new ClienteSQLRepository(new SQLContext(null));
-        //            break;
+        //todo   switch (option)
+        //  {
+        //    case 0:
+        //           repo = new ClienteSQLRepository(new SQLContext(null));
+        //          break;
         //        case 1:
-        //            repo = new ClienteTextFileRepository();
+        //           repo = new ClienteTextFileRepository();
         //            break;
-        //        case 2:
-        //            repo = new ClienteSqliteRepository(new SqliteContext());
+        //       case 2:
+        //           repo = new ClienteSqliteRepository(new SqliteContext());
         //            break;
         //        default:
         //            repo = new ClienteMemoryRepository();
@@ -64,7 +93,7 @@ namespace MyApp.Consultorio
         //        Nombre = "Abdiel",
         //        Apellido = "Sanchez",
         //        Id = Guid.NewGuid().ToString()
-        //    });
+        //     });
 
 
         //    cliente.CargarDatos().ForEach(x =>
