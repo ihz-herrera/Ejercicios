@@ -12,13 +12,14 @@ using MyApp.Consultorio.Contextos;
 namespace MyApp.Consultorio.Infraestrucura.SQLServer.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    [Migration("20221117175212_inicializar")]
-    partial class inicializar
+    [Migration("20221209175241_initialize")]
+    partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("dbo")
                 .HasAnnotation("ProductVersion", "6.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -41,37 +42,14 @@ namespace MyApp.Consultorio.Infraestrucura.SQLServer.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("NombreCliente");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("codigoCliente");
 
-                    b.ToTable("Clientes");
-                });
-
-            modelBuilder.Entity("MyApp.Consultorio.Entidades.Doctor", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Apellido")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Cedula")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NumeroDeTelefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Doctores");
+                    b.ToTable("Clientes", "cat");
                 });
 #pragma warning restore 612, 618
         }

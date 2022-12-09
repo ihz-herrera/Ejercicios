@@ -15,6 +15,9 @@ namespace MyApp.Consultorio.Entidades
         public DateTime FechaNacimiento { get; set; }
         public string? Direccion { get; set; }
 
+        //! Propiedad de Navegacion
+        public List<Cita> Citas { get; set; }
+
 
 
         public Cliente(IRepository<Cliente> repo)

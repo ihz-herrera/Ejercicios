@@ -19,7 +19,8 @@ namespace MyApp.Consultorio.Entidades
 
         public string Nombre
         {  
-            get => _nombre;set => _nombre = value
+            get => _nombre;
+            set => _nombre = value
                 .HasValue(nameof(Nombre))
                 .GreaterThan(2 ,nameof(Nombre));             
         }

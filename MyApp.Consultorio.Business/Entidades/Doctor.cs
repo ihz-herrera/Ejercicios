@@ -15,6 +15,9 @@ namespace MyApp.Consultorio.Entidades
         //!? Debe ser numérico, no debe contener "-", debe ser de 10 digitos
         public string NumeroDeTelefono { get; set; }
 
+        //! Propiedad de Navegacion
+        public List<Cita> Citas { get; set; }
+
 
         public override string ToString()
         {

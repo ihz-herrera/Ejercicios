@@ -5,26 +5,24 @@ namespace MyApp.Consultorio.Business.Test.Clientes
     public class ClienteTest
     {
 
-        [Fact]
-        public void ClienteCreateValidation_NotNullOrWhiteSpace()
+        [Theory]
+        [InlineData("","Nombre")]
+        [InlineData("IA", "Nombre")]
+
+        public void ClienteCreateValidationNombre_NotNullOrWhiteSpace(string value, string paramname)
         {
             var cliente = new Cliente();
-            Assert.Throws<ArgumentException>("Nombre",()=> cliente.Nombre = "");
-            Assert.Throws<ArgumentException>("Apellido", () => cliente.Apellido = "");
+            Assert.Throws<ArgumentException>(paramname,()=> cliente.Nombre = value);
         }
 
-        [Fact]
-        public void ClienteCreateValidation_NombreLength()
-        {
-            var cliente = new Cliente();
-            Assert.Throws<ArgumentException>("Nombre", () => cliente.Nombre = "IA");
-        }
+        [Theory]
+        [InlineData("", "Apellido")]
+        [InlineData("IALOR", "Apellido")]
 
-        [Fact]
-        public void ClienteCreateValidation_ApellidoLength()
+        public void ClienteCreateValidationApellido_NotNullOrWhiteSpace(string value, string paramname)
         {
             var cliente = new Cliente();
-            Assert.Throws<ArgumentException>("Apellido", () => cliente.Apellido = "IALOR");
+            Assert.Throws<ArgumentException>(paramname, () => cliente.Apellido = value);
         }
 
         [Fact]
