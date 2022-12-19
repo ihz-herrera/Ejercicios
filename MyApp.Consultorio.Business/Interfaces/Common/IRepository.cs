@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyApp.Consultorio.Interfaces
+namespace MyApp.Consultorio.Business.Interfaces.Common
 {
     public interface IRepository<T> where T : class, IEntity, new()
     {

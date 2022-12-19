@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyApp.Consultorio.Business.Interfaces.Common;
 using MyApp.Consultorio.Entidades;
-using MyApp.Consultorio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +21,13 @@ namespace MyApp.Consultorio.Repositorios
             _context = context;
         }
 
+     
+
 
         public void Agregar(T entity)
         {
             _context.Set<T>().Add(entity);
-            _context.SaveChanges();
+          
         }
 
         public List<T> Consultar()
@@ -41,6 +43,10 @@ namespace MyApp.Consultorio.Repositorios
         public void Guardar(List<T> entidades)
         {
             _context.AddRange(entidades);
+        }
+
+        public void GuardarCambios()
+        {
             _context.SaveChanges();
         }
     }

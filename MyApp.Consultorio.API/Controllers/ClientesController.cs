@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.Extensions.Logging;
+using MyApp.Consultorio.Business.Interfaces.Common;
+using MyApp.Consultorio.Business.Interfaces.Servicios;
 using MyApp.Consultorio.Contextos;
 using MyApp.Consultorio.Entidades;
 using System;
@@ -15,11 +18,14 @@ namespace MyApp.Consultorio.API.Controllers
     public class ClientesController : ControllerBase
     {
 
-        private readonly SQLContext _context;
+      
+        private readonly IClienteService _clienteService;
 
-        public ClientesController(SQLContext sQLContext)
+        
+
+        public ClientesController(IClienteService clienteService, ILogger logger)
         {
-            _context = sQLContext;
+            _clienteService = clienteService;
         }
 
         [HttpGet()]
@@ -33,7 +39,7 @@ namespace MyApp.Consultorio.API.Controllers
         [HttpGet("{id}")]
         public ActionResult ConsultarClientes([FromRoute] string id)
         {
-            Cliente cliente = _context.Clientes.Where(x => ((Interfaces.IEntity)x).Id == id).FirstOrDefault();
+            Cliente cliente = _context.Clientes.Where(x => ((IEntity)x).Id == id).FirstOrDefault();
             try
             {
                 //return cliente;
@@ -56,13 +62,18 @@ namespace MyApp.Consultorio.API.Controllers
         [HttpPost()]
         public ActionResult CrearCliente([FromBody] Cliente cliente)
         {
-            _context.Clientes.Add(cliente);
-            _context.SaveChanges();
+            _clienteService.AgregarCliente(cliente);
 
             return Ok(cliente);
         }
 
-
+        //Todo: Tarea Funcionalidad de citas
+        /**** 
+         * Agregar cita
+         * Consultar citas del cliente
+         * Eliminar citas
+         * Actualizar citas
+         */
 
     }
 }

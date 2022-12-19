@@ -1,4 +1,4 @@
-﻿using MyApp.Consultorio.Interfaces;
+﻿using MyApp.Consultorio.Business.Interfaces.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,16 +54,7 @@ namespace MyApp.Consultorio.Entidades
                 throw new ArgumentException("El cliente debe tener mas de 18 años");
             }
 
-            //Buscar si existe el cliente en la base de datos
-            var result = repository.Consultar().Where(x=> 
-                            x.Nombre.ToUpper().Equals(cliente.Nombre.ToUpper()) &&
-                            x.Apellido.ToUpper().Equals(cliente.Apellido.ToUpper())
-                         ).ToList();
-
-            if(result.Count != 0)
-            {
-                throw new ArgumentException("El cliente ya existe");
-            }
+           
             repository.Agregar(cliente);
         }
        

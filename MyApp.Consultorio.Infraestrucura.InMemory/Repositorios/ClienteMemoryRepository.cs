@@ -1,5 +1,5 @@
-﻿using MyApp.Consultorio.Entidades;
-using MyApp.Consultorio.Interfaces;
+﻿using MyApp.Consultorio.Business.Interfaces.Common;
+using MyApp.Consultorio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;

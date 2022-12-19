@@ -1,4 +1,4 @@
-﻿using MyApp.Consultorio.Interfaces;
+﻿using MyApp.Consultorio.Business.Interfaces.Common;
 using MyApp.Consultorio.Transversal.Guards;
 using System;
 using System.Collections.Generic;
