@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,18 @@ namespace MyApp.Consultorio.Consola
 {
     internal static class Extenciones
     {
+
+
+        public static string nombre(this string value,
+            [CallerArgumentExpression("value")] string param="",
+            [CallerMemberName] string param2 = "")
+        {
+            return nameof(value);
+        }
+
+
+
+
         public static List<T> WhereTo<T>(this List<T> lista, Func<T, bool> action)
         {
             var resultado = new List<T>();

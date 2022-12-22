@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.Business.Interfaces.Repositorios
 {
-    public interface ICitasRepository : IRepository<Cita>
+    public interface IDoctoresRepository:IRepository<Doctor>
     {
-        
+
+        IEnumerable<Cita> ConsultarCitas(string doctorId);
+
+        bool FechaDisponible(string doctorId, DateTime fecha);
+
+
     }
 }

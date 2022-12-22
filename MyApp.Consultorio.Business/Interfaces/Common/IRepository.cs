@@ -13,5 +13,7 @@ namespace MyApp.Consultorio.Business.Interfaces.Common
         List<T> Consultar();
         T ConsultarPorId(string id);
 
+        void AceptarCambios();
+
     }
 }

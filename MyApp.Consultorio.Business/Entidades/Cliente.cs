@@ -42,6 +42,7 @@ namespace MyApp.Consultorio.Entidades
         public void AgregarCliente(Cliente cliente)
         {
 
+
             //Todo: Validar datos de entrada
             if (String.IsNullOrEmpty(cliente.Nombre) || String.IsNullOrEmpty(cliente.Apellido) )
             {

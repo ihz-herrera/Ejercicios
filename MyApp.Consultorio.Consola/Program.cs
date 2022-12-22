@@ -31,12 +31,21 @@ internal class Program
                 break;
             case OptionType.option2:
                 break;
-            default: throw new ArgumentException();
+            default: throw new ArgumentException("Opción no valida.",nameof(card));
         }
     }
 
     private static void Main(string[] args)
     {
+
+
+
+        var solution = "";
+
+        var r = solution.nombre();
+
+        Console.WriteLine(r);
+
         EnumTest(OptionType.option);
 
 
@@ -54,11 +63,11 @@ internal class Program
             new Persona() { A = "No",Name="Herrera" },
         };
 
-        var r = lista.WhereTo<Persona>(x => x.A.Equals("No"));
+        //var r = lista.WhereTo<Persona>(x => x.A.Equals("No"));
 
         (string mensaje, string nombre) = result;
 
-        Console.WriteLine($"{mensaje} {nombre}: {r.Count}");
+        //Console.WriteLine($"{mensaje} {nombre}: {r.Count}");
         var t = 5..10;
         foreach(var i in 1..6)
         {

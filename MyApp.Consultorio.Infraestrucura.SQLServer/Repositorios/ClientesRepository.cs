@@ -2,7 +2,6 @@
 using MyApp.Consultorio.Business.Interfaces.Repositorios;
 using MyApp.Consultorio.Contextos;
 using MyApp.Consultorio.Entidades;
-using MyApp.Consultorio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +10,30 @@ using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.Repositorios
 {
-    public class ClienteSQLRepository : Repository<Cliente>, IClienteRepository
+    public class ClientesRepository : Repository<Cliente>, IClientesRepository
     {
         //private readonly SQLContext _context;
 
-        public ClienteSQLRepository(DbContext context) : base(context)
+        public ClientesRepository(DbContext context) : base(context)
         {
             //_context = new SQLContext();
 
         }
 
+        public IEnumerable<Cita> ConsultarCitas(string clienteId)
+        {
+            return ConsultarPorId(clienteId).Citas;
+        }
+
         public Cliente ConsultarporNombre(string nombre)
         {
             return Consultar().FirstOrDefault(x => x.Nombre == nombre)!;
+        }
+
+        public bool FechaDisponible(string clienteId, DateTime fecha)
+        {
+            return !ConsultarPorId(clienteId).
+                Citas.Any(x => x.Fecha.Date == fecha.Date);
         }
 
 

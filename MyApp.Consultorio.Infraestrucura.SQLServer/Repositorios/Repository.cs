@@ -21,8 +21,10 @@ namespace MyApp.Consultorio.Repositorios
             _context = context;
         }
 
-     
-
+        public void AceptarCambios()
+        {
+            throw new NotImplementedException();
+        }
 
         public void Agregar(T entity)
         {

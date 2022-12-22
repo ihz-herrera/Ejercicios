@@ -1,4 +1,5 @@
 ﻿using MyApp.Consultorio.Business.Interfaces.Repositorios;
+using MyApp.Consultorio.Business.Interfaces.Servicios;
 using MyApp.Consultorio.Entidades;
 using System;
 using System.Collections.Generic;
@@ -9,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace MyApp.Consultorio.Business.Servicios
 {
-    public class CitasService
+    public class CitasService:ICitaService
     {
-        private readonly IClienteRepository clienteRepo;
-        private readonly IDoctorRepository doctorRepo;
+        private readonly IClientesRepository clienteRepo;
+        //private readonly IDoctorRepository doctorRepo;
         private readonly ICitasRepository citasRepo;
 
-        public CitasService(IClienteRepository clienteRepo,IDoctorRepository doctorRepo
-            ICitasRepository citasRepo)
+        public CitasService(IClientesRepository clienteRepo//,IDoctorRepository doctorRepo
+            ,ICitasRepository citasRepo)
         {
             this.clienteRepo = clienteRepo;
-            this.doctorRepo = doctorRepo;
+            //this.doctorRepo = doctorRepo;
             this.citasRepo = citasRepo;
         }
 
@@ -39,7 +40,7 @@ namespace MyApp.Consultorio.Business.Servicios
             citasRepo.Agregar(cita);
             //Guardo
 
-            citasRepo.Guardar();
+            //citasRepo.Guardar();
 
 
 

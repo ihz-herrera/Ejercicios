@@ -1,4 +1,5 @@
-﻿using MyApp.Consultorio.Entidades;
+﻿using MyApp.Consultorio.Business.Servicios;
+using MyApp.Consultorio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
@@ -23,6 +24,9 @@ namespace MyApp.Consultorio
         public ConsultorioService(string variable)
         {
             this.variable = variable;
+
+           
+
         }
 
         public List<Cliente> ConsultarClientes()

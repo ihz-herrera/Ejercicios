@@ -10,7 +10,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MyApp.Consultorio.API.Extenciones;
+using MyApp.Consultorio.Business.Interfaces.Repositorios;
+using MyApp.Consultorio.Business.Interfaces.Servicios;
+using MyApp.Consultorio.Business.Servicios;
 using MyApp.Consultorio.Contextos;
+using MyApp.Consultorio.Infraestrucura.SQLServer.Repositorios;
+using MyApp.Consultorio.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +47,15 @@ namespace MyApp.Consultorio.API
             string SqlConnection = Configuration.GetConnectionString("SqlConnectionStr") ;
 
             services.ConfigureSQLDbContext(SqlConnection);
+
+            services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<ICitaService, CitasService>();
+            services.AddScoped<IDoctorService, DoctorService>();
+
+            services.AddScoped<IClientesRepository, ClientesRepository>();
+            services.AddScoped<ICitasRepository, CitasRepository>();
+            services.AddScoped<IDoctoresRepository, DoctoresRepository>();
+
 
             #endregion
             //*** FIN Lineas personalizadas ***/

@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyApp.Consultorio.Contextos;
 using MyApp.Consultorio.Entidades;
-using MyApp.Consultorio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
