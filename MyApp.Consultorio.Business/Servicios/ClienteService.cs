@@ -30,7 +30,7 @@ namespace MyApp.Consultorio.Business.Servicios
             //Validar que el cliente exista
             if (_repo.ConsultarPorId(clienteId) == null)
             {
-                throw new ValidationException("El cliente no existe");
+                throw new ValidationException ("El cliente no existe");
             }
             //Validar que el doctor exista
             if (_doctorRepo.ConsultarPorId(doctorId) == null)

@@ -113,6 +113,11 @@ namespace MyApp.Consultorio.API.Controllers
 
                 return Ok(result);
             }
+            catch (ValidationException ve) when (ve.Message.Contains("no existe"))
+            {
+                _logger.LogError(ve.Message);
+                return NotFound(ve.Message);
+            }
             catch (ValidationException ve)
             {
                 _logger.LogError(ve.Message);

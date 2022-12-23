@@ -25,7 +25,7 @@ namespace MyApp.Consultorio.Business.Test.Entidades
                 });
 
 
-            throw new inva
+           
         }
     }
 }
